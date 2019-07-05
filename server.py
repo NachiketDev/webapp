@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/show')
 def show():
-	conn = sqlite3.connect("/home/f62e0187-ea1f-4f58-b2a2-e7b90b94/quickstart/webapp/coord.db")
+	conn = sqlite3.connect("coord.db")
 	crsr = conn.cursor()
 	crsr.execute("SELECT * FROM COORDS")
 	ans = crsr.fetchall()
@@ -25,7 +25,7 @@ def show():
 def fetchx():
 	if request.method == 'POST':
 		data = request.form.get('data')
-		conn = sqlite3.connect("/home/f62e0187-ea1f-4f58-b2a2-e7b90b94/quickstart/webapp/coord.db")
+		conn = sqlite3.connect("coord.db")
 		crsr = conn.cursor()
 		crsr.execute("SELECT * FROM COORDS")
 		ans = crsr.fetchall()
@@ -41,7 +41,7 @@ def fetchx():
 def fetchy():
 	if request.method == 'POST':
 		data = request.form.get('data')
-		conn = sqlite3.connect("/home/f62e0187-ea1f-4f58-b2a2-e7b90b94/quickstart/webapp/coord.db")
+		conn = sqlite3.connect("coord.db")
 		crsr = conn.cursor()
 		crsr.execute("SELECT * FROM COORDS")
 		ans = crsr.fetchall()
