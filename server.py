@@ -28,7 +28,7 @@ patch_request_class(app)  # set maximum file size, default is 16MB
 
 @app.route('/show')
 def show():
-	conn = sqlite3.connect("D:\Downloads\sqlite-tools-win32-x86-3280000\sqlite-tools-win32-x86-3280000\coord.db")
+	conn = sqlite3.connect("coord.db")
 	crsr = conn.cursor()
 	crsr.execute("SELECT * FROM COORDS")
 	ans = crsr.fetchall()
@@ -44,7 +44,7 @@ def show():
 def fetchx():
 	if request.method == 'POST':
 		data = request.form.get('data')
-		conn = sqlite3.connect("D:\Downloads\sqlite-tools-win32-x86-3280000\sqlite-tools-win32-x86-3280000\coord.db")
+		conn = sqlite3.connect("coord.db")
 		crsr = conn.cursor()
 		crsr.execute("SELECT * FROM COORDS")
 		ans = crsr.fetchall()
@@ -60,7 +60,7 @@ def fetchx():
 def fetchy():
 	if request.method == 'POST':
 		data = request.form.get('data')
-		conn = sqlite3.connect("D:\Downloads\sqlite-tools-win32-x86-3280000\sqlite-tools-win32-x86-3280000\coord.db")
+		conn = sqlite3.connect("coord.db")
 		crsr = conn.cursor()
 		crsr.execute("SELECT * FROM COORDS")
 		ans = crsr.fetchall()
