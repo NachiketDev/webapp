@@ -1,3 +1,0 @@
-Flask==1.1.0
-Flask_Uploads==0.2.1
-Flask_Dropzone==1.5.3
